@@ -1,10 +1,13 @@
 import { ThemeProvider } from "next-themes";
 import "tailwindcss/tailwind.css";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<ThemeProvider>
-			<Component {...pageProps} />
+		<ThemeProvider attribute="class">
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</ThemeProvider>
 	);
 }
