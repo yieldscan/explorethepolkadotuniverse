@@ -1,4 +1,9 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const PolkaViz = dynamic(() => import("../components/polkaviz"), {
+	ssr: false,
+});
 
 export default function Polkaviz() {
 	return (
@@ -7,7 +12,7 @@ export default function Polkaviz() {
 				<title>PolkaViz</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{/* <LandingPage /> */}
+			<PolkaViz />
 		</div>
 	);
 }
